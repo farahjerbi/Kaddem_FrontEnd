@@ -1,0 +1,82 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+       
+         
+            
+            <form [formGroup]="Formdep" >
+                <label> First name </label>
+                <input name="nomDepart"  formControlName="nomDepart">  
+                <div *ngIf="etatinput['nomDepart'].invalid">
+                    <div *ngIf="etatinput['nomDepart'].errors?.['required']">required</div>
+                    <div *ngIf="etatinput['nomDepart'].errors?.['minlength']">minlength</div>
+                    <div *ngIf="etatinput['nomDepart'].errors?.['pattern']">pattern</div>
+                </div>
+                <br>
+               
+                <input type="submit"  value="save"  [disabled]="Formdep.invalid" (click)="addDepartement()"> 
+                </form>
+
+
+
+
+
+
+
+
+
+      
+                
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Listes des Departements</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>Nom de departement</th>
+                                    
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of listdepartement'>
+                                
+                                        <td>{{p.nomDepart}}</td>
+                                    
+                                   
+                                        <td><button  mat-raised-button class="btn btn-success"> 
+                                            <i class="material-icons" >edit</i></button> 
+                                      
+                                           
+                                          
+                                      
+                                <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="deletedepartement(p.idDepartement)"><i class="material-icons">delete</i></button> 
+
+                                  
+                                                
+                                                  
+                                    
+          
+                                                  
+                                    
+                                    </tr>
+                                    
+                                
+                                           
+    
+                                    
+                                   
+                                   
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

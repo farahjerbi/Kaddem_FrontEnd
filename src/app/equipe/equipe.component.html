@@ -1,0 +1,73 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+       
+         
+
+            <form>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder=" Name" [(ngModel)]="etud.nomEquipe"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+               
+             
+                <br>
+                <button type="button" class="btn btn-success" (click)="addequipe(etud)">Add</button> 
+                <button type="button" class="btn btn-info">Cancel</button>
+            </form>
+                
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Listes des Equipes</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    
+                                    <th>Nom d'equipe</th>
+                                  
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of listEtudiants'>
+                                
+                                        <td>{{p.nomEquipe}}</td>
+                                       
+                                    
+                                   
+                                        <td><button  mat-raised-button class="btn btn-success"> 
+                                            <i class="material-icons" >edit</i></button> 
+                                      
+                                           
+                                          
+                                      
+                                <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="deleteequipe(p.idEquipe)"><i class="material-icons">delete</i></button> 
+
+                                  
+                                                
+                                                  
+                                    
+          
+                                                  
+                                    
+                                    </tr>
+                                    
+                                
+                                           
+    
+                                    
+                                   
+                                   
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

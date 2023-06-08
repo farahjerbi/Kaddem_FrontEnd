@@ -1,0 +1,83 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+       
+         
+
+            <form>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder=" nomOffre" [(ngModel)]="off.nomOffre"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="descriptionOffre" [(ngModel)]="off.descriptionOffre"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="TypeOffre" [(ngModel)]="off.TypeOffre"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+             
+                <br>
+                <button type="button" class="btn btn-success" (click)="addOffre(off)">Add</button> 
+                <button type="button" class="btn btn-info">Cancel</button>
+            </form>
+                
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Listes des Offres</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>nomOffre</th>
+                                    <th>descriptionOffre</th>
+                                    <th>TypeOffre</th>
+                                  
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of listOffre'>
+                                
+                                        <td>{{p.nomOffre}}</td>
+                                        <td>{{p.descriptionOffre}}</td>
+                                        <td>{{p.TypeOffre}}</td>
+                                    
+                                   
+                                        <td><button  mat-raised-button class="btn btn-success"> 
+                                            <i class="material-icons" >edit</i></button> 
+                                      
+                                           
+                                          
+                                      
+                                <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="deleteOffre(p.idOffre)"><i class="material-icons">delete</i></button> 
+
+                                  
+                                                
+                                                  
+                                    
+          
+                                                  
+                                    
+                                    </tr>
+                                    
+                                
+                                           
+    
+                                    
+                                   
+                                   
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,90 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+       
+         
+
+                <form>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder=" datedeb" [(ngModel)]="con.datedeb"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="datefin" [(ngModel)]="con.datefin"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="archive" [(ngModel)]="con.archive"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+
+                <div class="row" class="col-md-6">
+                    <input type="text" placeholder="montantContrat" [(ngModel)]="con.montantContrat"
+                        [ngModelOptions]="{standalone : true}">
+                </div>
+             
+                <br>
+                <button type="button" class="btn btn-success" (click)="addCont(con)">Add</button> 
+                <button type="button" class="btn btn-info">Cancel</button>
+            </form> 
+                
+            <div class="col-md-12">
+                <div class="card card-plain">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0"> Listes des Contacts</h4>
+                      
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="">
+                                    <th>date_debut</th>
+                                    <th>date_Fin</th>
+                                    <th>archive</th>
+                                    <th>montantContrat</th>
+                                  
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let p of listcontacts'>
+                                
+                                        <td>{{p.datedeb}}</td>
+                                        <td>{{p.datefin}}</td>
+                                        <td>{{p.archive}}</td>
+                                        <td>{{p.montantContrat}}</td>
+                                    
+                                   
+                                        <td><button  mat-raised-button class="btn btn-success"> 
+                                            <i class="material-icons" >edit</i></button> 
+                                      
+                                           
+                                          
+                                      
+                                <button mat-raised-button  rel="tooltip"  class="btn btn-danger" (click)="deleteCont(p.idContrat)"><i class="material-icons">delete</i></button> 
+
+                                  
+                                                
+                                                  
+                                    
+          
+                                                  
+                                    
+                                    </tr>
+                                    
+                                
+                                           
+    
+                                    
+                                   
+                                   
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
